@@ -1,0 +1,832 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.24.1010.1014                               -->
+<workbook original-version='18.1' source-build='2024.3.0 (20243.24.1010.1014)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='County_Health_Rankings' inline='true' name='federated.0jqrv4j15irozg17rjuo109wi04h' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='County_Health_Rankings' name='textscan.0i18hec1uw2n901cpgg5b08seof9'>
+            <connection class='textscan' directory='/Users/maxgentry/Desktop' filename='County_Health_Rankings.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0i18hec1uw2n901cpgg5b08seof9' name='County_Health_Rankings.csv' table='[County_Health_Rankings#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='State' ordinal='0' />
+            <column datatype='string' name='County' ordinal='1' />
+            <column datatype='integer' name='State code' ordinal='2' />
+            <column datatype='integer' name='County code' ordinal='3' />
+            <column datatype='string' name='Year span' ordinal='4' />
+            <column datatype='string' name='Measure name' ordinal='5' />
+            <column datatype='integer' name='Measure id' ordinal='6' />
+            <column datatype='real' name='Numerator' ordinal='7' />
+            <column datatype='real' name='Denominator' ordinal='8' />
+            <column datatype='real' name='Raw value' ordinal='9' />
+            <column datatype='string' name='Confidence Interval Lower Bound' ordinal='10' />
+            <column datatype='string' name='Confidence Interval Upper Bound' ordinal='11' />
+            <column datatype='integer' name='Data Release Year' ordinal='12' />
+            <column datatype='integer' name='fipscode' ordinal='13' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[County_Health_Rankings.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>State</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[State]</local-name>
+            <parent-name>[County_Health_Rankings.csv]</parent-name>
+            <remote-alias>State</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>County</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[County]</local-name>
+            <parent-name>[County_Health_Rankings.csv]</parent-name>
+            <remote-alias>County</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>State code</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[State code]</local-name>
+            <parent-name>[County_Health_Rankings.csv]</parent-name>
+            <remote-alias>State code</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>County code</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[County code]</local-name>
+            <parent-name>[County_Health_Rankings.csv]</parent-name>
+            <remote-alias>County code</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Year span</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Year span]</local-name>
+            <parent-name>[County_Health_Rankings.csv]</parent-name>
+            <remote-alias>Year span</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Measure name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Measure name]</local-name>
+            <parent-name>[County_Health_Rankings.csv]</parent-name>
+            <remote-alias>Measure name</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Measure id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Measure id]</local-name>
+            <parent-name>[County_Health_Rankings.csv]</parent-name>
+            <remote-alias>Measure id</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Numerator</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Numerator]</local-name>
+            <parent-name>[County_Health_Rankings.csv]</parent-name>
+            <remote-alias>Numerator</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Denominator</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Denominator]</local-name>
+            <parent-name>[County_Health_Rankings.csv]</parent-name>
+            <remote-alias>Denominator</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Raw value</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Raw value]</local-name>
+            <parent-name>[County_Health_Rankings.csv]</parent-name>
+            <remote-alias>Raw value</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Confidence Interval Lower Bound</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Confidence Interval Lower Bound]</local-name>
+            <parent-name>[County_Health_Rankings.csv]</parent-name>
+            <remote-alias>Confidence Interval Lower Bound</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Confidence Interval Upper Bound</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Confidence Interval Upper Bound]</local-name>
+            <parent-name>[County_Health_Rankings.csv]</parent-name>
+            <remote-alias>Confidence Interval Upper Bound</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Data Release Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Data Release Year]</local-name>
+            <parent-name>[County_Health_Rankings.csv]</parent-name>
+            <remote-alias>Data Release Year</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fipscode</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[fipscode]</local-name>
+            <parent-name>[County_Health_Rankings.csv]</parent-name>
+            <remote-alias>fipscode</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[County code]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[County]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+      <column datatype='integer' name='[Measure id]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[State code]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='County_Health_Rankings.csv' datatype='table' name='[__tableau_internal_object_id__].[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]' role='measure' type='quantitative' />
+      <column caption='Fipscode' datatype='integer' name='[fipscode]' role='measure' type='quantitative' />
+      <drill-paths>
+        <drill-path name='State, County'>
+          <field>[State]</field>
+          <field>[County]</field>
+        </drill-path>
+      </drill-paths>
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/fg/qml6zgdd32gbts4vwmwqf0z40000gn/T/tableau-temp/#TableauTemp_0y815lx142k8hs1fxvmqa06g4fhg.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='04/19/2025 11:12:47 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>State</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[State]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>State</remote-alias>
+              <ordinal>0</ordinal>
+              <family>County_Health_Rankings.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>75</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>County</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[County]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>County</remote-alias>
+              <ordinal>1</ordinal>
+              <family>County_Health_Rankings.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9580</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>State code</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[State code]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>State code</remote-alias>
+              <ordinal>2</ordinal>
+              <family>County_Health_Rankings.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>75</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>County code</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[County code]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>County code</remote-alias>
+              <ordinal>3</ordinal>
+              <family>County_Health_Rankings.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1087</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Year span</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Year span]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Year span</remote-alias>
+              <ordinal>4</ordinal>
+              <family>County_Health_Rankings.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>37</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Measure name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Measure name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Measure name</remote-alias>
+              <ordinal>5</ordinal>
+              <family>County_Health_Rankings.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>22</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Measure id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Measure id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Measure id</remote-alias>
+              <ordinal>6</ordinal>
+              <family>County_Health_Rankings.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>22</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Numerator</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Numerator]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Numerator</remote-alias>
+              <ordinal>7</ordinal>
+              <family>County_Health_Rankings.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>31320</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Denominator</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Denominator]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Denominator</remote-alias>
+              <ordinal>8</ordinal>
+              <family>County_Health_Rankings.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>68988</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Raw value</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Raw value]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Raw value</remote-alias>
+              <ordinal>9</ordinal>
+              <family>County_Health_Rankings.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>25041</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Confidence Interval Lower Bound</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Confidence Interval Lower Bound]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Confidence Interval Lower Bound</remote-alias>
+              <ordinal>10</ordinal>
+              <family>County_Health_Rankings.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>22206</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Confidence Interval Upper Bound</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Confidence Interval Upper Bound]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Confidence Interval Upper Bound</remote-alias>
+              <ordinal>11</ordinal>
+              <family>County_Health_Rankings.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>21483</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Data Release Year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Data Release Year]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Data Release Year</remote-alias>
+              <ordinal>12</ordinal>
+              <family>County_Health_Rankings.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>fipscode</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[fipscode]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>fipscode</remote-alias>
+              <ordinal>13</ordinal>
+              <family>County_Health_Rankings.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>20031</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='County_Health_Rankings.csv' id='County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A'>
+            <properties context=''>
+              <relation connection='textscan.0i18hec1uw2n901cpgg5b08seof9' name='County_Health_Rankings.csv' table='[County_Health_Rankings#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='State' ordinal='0' />
+                  <column datatype='string' name='County' ordinal='1' />
+                  <column datatype='integer' name='State code' ordinal='2' />
+                  <column datatype='integer' name='County code' ordinal='3' />
+                  <column datatype='string' name='Year span' ordinal='4' />
+                  <column datatype='string' name='Measure name' ordinal='5' />
+                  <column datatype='integer' name='Measure id' ordinal='6' />
+                  <column datatype='real' name='Numerator' ordinal='7' />
+                  <column datatype='real' name='Denominator' ordinal='8' />
+                  <column datatype='real' name='Raw value' ordinal='9' />
+                  <column datatype='string' name='Confidence Interval Lower Bound' ordinal='10' />
+                  <column datatype='string' name='Confidence Interval Upper Bound' ordinal='11' />
+                  <column datatype='integer' name='Data Release Year' ordinal='12' />
+                  <column datatype='integer' name='fipscode' ordinal='13' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='County_Health_Rankings' name='federated.0jqrv4j15irozg17rjuo109wi04h' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0jqrv4j15irozg17rjuo109wi04h'>
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column caption='County_Health_Rankings.csv' datatype='table' name='[__tableau_internal_object_id__].[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.0jqrv4j15irozg17rjuo109wi04h].[__tableau_internal_object_id__].[cnt:County_Health_Rankings.csv_4C6F8F6065784E02900E22720A40667A:qk]</rows>
+        <cols>[federated.0jqrv4j15irozg17rjuo109wi04h].[none:State:nk]</cols>
+      </table>
+      <simple-id uuid='{130CE567-CBC8-4FCA-B20B-D229C8E0EA23}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0jqrv4j15irozg17rjuo109wi04h].[none:State:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{6572A079-7B39-4D7F-9D70-FC5B776725EE}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='384' name='Sheet 1' width='384'>
+      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
+      YII=
+    </thumbnail>
+  </thumbnails>
+</workbook>

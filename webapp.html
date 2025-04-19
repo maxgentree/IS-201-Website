@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tic Tac Toe</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+      background-color: #f0f4f8;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    #board {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      gap: 5px;
+    }
+
+    .cell {
+      width: 100px;
+      height: 100px;
+      background-color: #fff;
+      border: 2px solid #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      cursor: pointer;
+    }
+
+    .cell.taken {
+      pointer-events: none;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 8px 16px;
+      font-size: 1em;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tic Tac Toe</h1>
+  <div id="board"></div>
+  <div id="result"></div>
+  <button onclick="resetGame()">Restart Game</button>
+  <canvas id="confetti-canvas"></canvas>
+
+  <script>
+    const boardEl = document.getElementById('board');
+    const resultEl = document.getElementById('result');
+    const confettiCanvas = document.getElementById('confetti-canvas');
+    const ctx = confettiCanvas.getContext('2d');
+    let board = Array(9).fill('');
+    let isGameOver = false;
+    let confettiParticles = [];
+
+    const winCombos = [
+      [0,1,2], [3,4,5], [6,7,8],
+      [0,3,6], [1,4,7], [2,5,8],
+      [0,4,8], [2,4,6]
+    ];
+
+    function resizeCanvas() {
+      confettiCanvas.width = window.innerWidth;
+      confettiCanvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function renderBoard() {
+      boardEl.innerHTML = '';
+      board.forEach((cell, index) => {
+        const cellEl = document.createElement('div');
+        cellEl.className = 'cell';
+        if (cell !== '') {
+          cellEl.classList.add('taken');
+        }
+        cellEl.textContent = cell;
+        cellEl.addEventListener('click', () => playerMove(index));
+        boardEl.appendChild(cellEl);
+      });
+    }
+
+    function playerMove(index) {
+      if (isGameOver || board[index] !== '') return;
+
+      board[index] = 'X';
+      renderBoard();
+      if (checkWinner('X')) {
+        endGame('You win!', true);
+        return;
+      } else if (board.every(cell => cell !== '')) {
+        endGame('Draw!', false);
+        return;
+      }
+
+      setTimeout(computerMove, 500);
+    }
+
+    function computerMove() {
+      const emptyIndices = board
+        .map((val, i) => val === '' ? i : null)
+        .filter(i => i !== null);
+
+      if (emptyIndices.length === 0) return;
+
+      const choice = emptyIndices[Math.floor(Math.random() * emptyIndices.length)];
+      board[choice] = 'O';
+      renderBoard();
+
+      if (checkWinner('O')) {
+        endGame('Computer wins!', false);
+      } else if (board.every(cell => cell !== '')) {
+        endGame('Draw!', false);
+      }
+    }
+
+    function checkWinner(symbol) {
+      return winCombos.some(combo => 
+        combo.every(index => board[index] === symbol)
+      );
+    }
+
+    function endGame(message, playerWon) {
+      isGameOver = true;
+      resultEl.textContent = message;
+      if (playerWon) {
+        launchConfetti();
+      }
+    }
+
+    function resetGame() {
+      board = Array(9).fill('');
+      isGameOver = false;
+      resultEl.textContent = '';
+      renderBoard();
+      confettiParticles = [];
+    }
+
+    // Confetti logic
+    function launchConfetti() {
+      for (let i = 0; i < 100; i++) {
+        confettiParticles.push({
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * -100,
+          r: Math.random() * 6 + 4,
+          d: Math.random() * 10 + 10,
+          color: `hsl(${Math.random() * 360}, 100%, 50%)`,
+          tilt: Math.random() * 10 - 10,
+          tiltAngleIncrement: Math.random() * 0.05 + 0.02,
+          tiltAngle: 0
+        });
+      }
+    }
+
+    function drawConfetti() {
+      ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+      confettiParticles.forEach(p => {
+        p.tiltAngle += p.tiltAngleIncrement;
+        p.y += Math.cos(p.d / 10);
+        p.tilt = Math.sin(p.tiltAngle) * 15;
+
+        ctx.beginPath();
+        ctx.lineWidth = p.r;
+        ctx.strokeStyle = p.color;
+        ctx.moveTo(p.x + p.tilt + p.r, p.y);
+        ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r);
+        ctx.stroke();
+      });
+
+      confettiParticles = confettiParticles.filter(p => p.y < window.innerHeight);
+      requestAnimationFrame(drawConfetti);
+    }
+
+    renderBoard();
+    drawConfetti();
+  </script>
+</body>
+</html>

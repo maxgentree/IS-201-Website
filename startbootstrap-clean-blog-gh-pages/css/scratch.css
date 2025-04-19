@@ -1,0 +1,30 @@
+p{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#top{
+    text-decoration: underline;
+}
+
+.empashizedText{
+    font-style: italic;
+    color: gray;
+}
+
+body{
+    background-color: orange;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    border: 5px solid black;
+    margin: 50px;
+    padding: 20px;
+}
+
+.centeredlist{
+    padding-left: 0;
+    list-style-position: outside;
+    margin: 0 auto;
+    display: table;
+    text-align: left;
+}
